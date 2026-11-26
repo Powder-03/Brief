@@ -18,18 +18,11 @@ struct MainTabView: View {
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            NavigationStack {
-                EmptyStateView(
-                    systemImage: "newspaper",
-                    title: "Discover Tech News",
-                    subtitle: "Live Hacker News stories and infinite-scroll discovery will appear here."
-                )
-                .navigationTitle("Brief")
-            }
-            .tabItem {
-                Label("Discover", systemImage: "newspaper")
-            }
-            .tag(AppTab.discover)
+            FeedTabView(viewModel: environment.feedViewModel)
+                .tabItem {
+                    Label("Discover", systemImage: "newspaper")
+                }
+                .tag(AppTab.discover)
 
             NavigationStack {
                 EmptyStateView(

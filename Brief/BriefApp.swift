@@ -13,7 +13,7 @@ struct BriefApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            ContentView()
                 .environment(environment)
         }
     }
