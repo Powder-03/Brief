@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct BriefApp: App {
+    @State private var environment = AppEnvironment()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
+                .environment(environment)
         }
     }
 }
